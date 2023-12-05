@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+</head>
+
+<body class="container" onload="ObtenerProductos()">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex" id="searchForm">
+          <input class="form-control me-2" type="search"  id="searchInput" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  
+  <h2>CRUD de Productos</h2>
+
+  <form action="" id="frmProductos" class="row">
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">ID </label>
+        <input type="text" step="0.01" name="id" id="id" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Ingrese el nombre </label>
+        <input type="text" name="nombre" id="nombre" class="form-control">
+        <input type="hidden" name="productoId" id="productoId">
+      </div>
+    </div>
+  
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Ingrese el Last_name </label>
+        <input type="text" step="0.01" name="last_name" id="last_name" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Ingrese el Email </label>
+        <input type="email" step="1" name="email" id="email" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Ingrese el Phone </label>
+        <input type="text" name="Phone" id="phone" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Ingrese el Subject </label>
+        <input type="text" step="0.01" name="subject" id="subject" class="form-control">
+      </div>
+    </div>
+    
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <a href="#" onclick="GuardarProducto()" class="btn btn-success btn-block">Procesar</a>
+        <a href="#" onclick="ActualizarProducto()" class="btn btn-warning btn-block">Actualizar</a>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <table id="tablaProductos" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+        <tr>
+          <th>Accion</th>
+          <th>id</th>
+          <th>Nombre</th>
+          <th>Last_name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Subject</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTabla">
+        
+      </tbody>
+    </table>
+    <script src="index.js"></script>
+  </div>
+</body>
+
+</html>
